@@ -41,7 +41,7 @@ def scrape_job_data(page):
 def run(playwright):
     global elements
     browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
+    context = browser.new_context(record_video_dir="videos/")
     page = context.new_page()
     page.goto("https://www.upwork.com/ab/account-security/login")
     page.get_by_placeholder("Username or Email").click()
@@ -104,8 +104,8 @@ def run(playwright):
 
     context.close()
     browser.close()
-
-
+    path = page.video.path()
+    print(path)
 with sync_playwright() as playwright:
     run(playwright)
 
