@@ -5,7 +5,7 @@ import pandas as pd
 from playwright.sync_api import sync_playwright
 
 # Read configuration from Excel file
-df = pd.read_excel("C:/Users/lnv0165/PycharmProjects/upworkProject/UpworkUtility/Input123.xlsx", sheet_name='Configuration')
+df = pd.read_excel("Input.xlsx", sheet_name='Configuration')
 username = df.loc[0, 'Username']
 password = df.loc[0, 'Password']
 keywd = df.loc[0, 'Keyword']
@@ -115,7 +115,7 @@ sheet_name = current_time.strftime('Sheet_%Y-%m-%d_%H-%M-%S')
 print(result_df)
 # Write DataFrame to Excel file
 # Path to your Excel file
-file_path = "C:/Users/lnv0165/PycharmProjects/upworkProject/UpworkUtility/Input123.xlsx"
+file_path = "Input.xlsx"
 
 # Attempt to write to a new sheet in the existing workbook
 try:
